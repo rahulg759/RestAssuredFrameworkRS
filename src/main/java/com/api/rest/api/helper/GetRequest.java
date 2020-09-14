@@ -63,11 +63,11 @@ public class GetRequest {
 			//Print response body
 			ResponseHandler<String> body= new BasicResponseHandler();
 			RestResponse rs=new RestResponse(response.getStatusLine().getStatusCode(), body.handleResponse(response));
-			System.out.println(rs.toString());
+			//System.out.println(rs.toString());
 
 
 			//Call to RestAPIHelper.java class
-			RestAPIHelper.performGetRequest("http://localhost:8087/laptop-bag/webapi/api/all",null);
+			//RestAPIHelper.performGetRequest("http://localhost:8087/laptop-bag/webapi/api/all",null);
 
 
 			//Call to RestReponse class from RestAPIHelper.java class

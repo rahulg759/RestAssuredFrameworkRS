@@ -1,4 +1,4 @@
-package com.api.rest.api.helper;
+package com.api.rest.junit.helper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +7,7 @@ import org.apache.http.HttpStatus;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.api.rest.api.helper.RestAPIHelper;
 import com.api.rest.api.model.ResponseBody;
 import com.api.rest.api.model.RestResponse;
 import com.google.gson.Gson;
