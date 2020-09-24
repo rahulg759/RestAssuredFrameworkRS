@@ -39,7 +39,7 @@ public class TestPostHelper {
 
 		Map<String,String> headers = new LinkedHashMap<String,String>();
 		headers.put("Content-Type", "application/json"); headers.put("Accept","application/json"); 
-		RestResponse response= RestAPIHelper.performPostRequestGeneric("http://localhost:8087/laptop-bag/webapi/api/add", jsonBody,ContentType.APPLICATION_JSON, headers); 
+		RestResponse response= RestAPIHelper.performPostRequest("http://localhost:8087/laptop-bag/webapi/api/add", jsonBody,ContentType.APPLICATION_JSON, headers); 
 		Assert.assertEquals(HttpStatus.SC_OK,response.getStatusCode());
 		System.out.println("Response body in JSON : \n"+response.getResponseBody());
 		//validate the content 
@@ -71,7 +71,7 @@ public class TestPostHelper {
 		Map<String, String> headers = new LinkedHashMap<String, String>();
 		headers.put("Content-Type", "application/xml");
 		headers.put("Accept", "application/xml");
-		RestResponse response = RestAPIHelper.performPostRequestGeneric(
+		RestResponse response = RestAPIHelper.performPostRequest(
 				"http://localhost:8087/laptop-bag/webapi/api/add", xmlBody, ContentType.APPLICATION_XML, headers);
 		Assert.assertEquals(HttpStatus.SC_OK, response.getStatusCode());
 		System.out.println("Response body in XML : \n"+response.getResponseBody());

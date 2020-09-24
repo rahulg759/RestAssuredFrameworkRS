@@ -55,11 +55,12 @@ public class TestPutHelper {
 		Map<String,String> headers = new LinkedHashMap<String,String>();
 		headers.put("Content-Type", "application/json"); 
 		headers.put("Accept","application/json"); 
-		RestResponse response= RestAPIHelper.performPostRequestGeneric("http://localhost:8087/laptop-bag/webapi/api/add", jsonBody,ContentType.APPLICATION_JSON, headers); 
+		RestResponse response= RestAPIHelper.performPostRequest("http://localhost:8087/laptop-bag/webapi/api/add", jsonBody,ContentType.APPLICATION_JSON, headers); 
 		Assert.assertEquals(HttpStatus.SC_OK,response.getStatusCode());
 		headers.clear();
 		headers.put("Content-Type", "application/xml"); 
 		headers.put("Accept","application/xml"); 
+		
 		response=RestAPIHelper.performPutRequest("http://localhost:8087/laptop-bag/webapi/api/update", xmlBody, ContentType.APPLICATION_XML, headers);
 		Assert.assertEquals(HttpStatus.SC_OK,response.getStatusCode());
 		response=RestAPIHelper.performGetRequest("http://localhost:8087/laptop-bag/webapi/api/find/"+id, headers);

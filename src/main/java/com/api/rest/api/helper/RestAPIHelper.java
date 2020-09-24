@@ -144,7 +144,7 @@ public class RestAPIHelper {
 	}
 
 
-	public static RestResponse performPostRequestGeneric(String url, Object content, ContentType type,Map<String, String> headers) {
+	public static RestResponse performPostRequest(String url, Object content, ContentType type,Map<String, String> headers) {
 		CloseableHttpResponse response = null;
 		HttpPost post = new HttpPost(url);
 
@@ -180,7 +180,6 @@ public class RestAPIHelper {
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage(),e);
 		}
-
 	}
 
 	public static RestResponse performDeleteRequest(URI uri,Map<String, String> headers) {

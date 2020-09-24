@@ -83,7 +83,7 @@ public class PostRequest {
 		File f=new File("D:\\My_Workspace\\projectwork\\RestAssuredFrameworkRS\\TestDataFile");
 		//FileEntity file=new FileEntity(f,ContentType.APPLICATION_JSON);
 
-		RestResponse response=	RestAPIHelper.performPostRequestGeneric("http://localhost:8087/laptop-bag/webapi/api/add", f, ContentType.APPLICATION_JSON, headers1);
+		RestResponse response=	RestAPIHelper.performPostRequest("http://localhost:8087/laptop-bag/webapi/api/add", f, ContentType.APPLICATION_JSON, headers1);
 		System.out.println(response.getStatusCode());
 		System.out.println(response.getResponseBody());
 	}
