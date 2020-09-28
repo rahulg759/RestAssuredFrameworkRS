@@ -1,11 +1,9 @@
 {
- "BrandName": "Apple123",
+ "BrandName": "Dell",
  "Features": {
-  "Feature": ["16GB RAM",
-  "5TB Hard Drive",
-  "15.5 LCD Dispaly",
-  "This is from file"]
+  "Feature": ["8GB RAM",
+  "1TB Hard Drive"]
  },
- "Id": 130,
- "LaptopName": "Macbook Laptops"
+ "Id": 213,
+ "LaptopName": "Latitude"
 }

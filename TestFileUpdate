@@ -1,0 +1,9 @@
+{
+ "BrandName": "HP",
+ "Features": {
+  "Feature": ["32GB RAM",
+  "2TB Hard Drive"]
+ },
+ "Id": 213,
+ "LaptopName": "Macbook Advance"
+}

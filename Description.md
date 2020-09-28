@@ -51,5 +51,16 @@ Prompt war file -->>
 1 - For prompt first we need to deploy laptop war file as prompt in tomcat.
 2 - Go to ResourceSecureWithPrompt (index.html) and get the details from there.
 
-Fidler - Fiddler is a free debugging proxy for any browser. We can use it to compose and execute different HTTP requests to our Web API and check HTTP response. Let's see how to use Fiddler to send an HTTP request to our local Web API and check the response.
+Fiddler - Fiddler is a free debugging proxy for any browser. We can use it to compose and execute different HTTP requests to our Web API and check HTTP response. Let's see how to use Fiddler to send an HTTP request to our local Web API and check the response.
+
+
+=============================================================###############============================================================
+
+SSL Certificate -- >>
+
+1-For enable the SSL certificate - > Go to your Windows menu and search %HOME_JAVA% and enter.
+You will be navigated to jdk folder and open bin.
+2-we need to open the command prompt as administrator mode.
+3- For handling SSL Certificate we need to use TrustStrategy interface.
+4-SSLContextBuilder class for customized the client.
 
