@@ -5,7 +5,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.apache.http.entity.ContentType;
-
 import com.api.rest.api.model.RestResponse;
 
 
@@ -21,7 +20,7 @@ public class PostRequest {
 		step 5 : Display the response a the console
 		 */
 
-		int id =(int)(1000*(Math.random()));
+		/*int id =(int)(1000*(Math.random()));
 		
 		String jsonBody="{\r\n" + 
 				" \"BrandName\": \"AcerTest\",\r\n" + 
@@ -33,7 +32,7 @@ public class PostRequest {
 				" \"LaptopName\": \"Acer Laptops\"\r\n" + 
 				"}";
 
-		/*
+	
 		    HttpPost post = new HttpPost("http://localhost:8087/laptop-bag/webapi/api/add");
 		    try(CloseableHttpClient client=HttpClientBuilder.create().build()) {
 			post.addHeader("Content-Type", "application/json");

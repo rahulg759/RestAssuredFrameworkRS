@@ -1,9 +1,5 @@
 package com.api.rest.api.helper;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.http.StatusLine;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -63,7 +59,7 @@ public class GetRequest {
 			//Print response body
 			ResponseHandler<String> body= new BasicResponseHandler();
 			RestResponse rs=new RestResponse(response.getStatusLine().getStatusCode(), body.handleResponse(response));
-			//System.out.println(rs.toString());
+			System.out.println(rs.toString());
 
 
 			//Call to RestAPIHelper.java class
@@ -73,7 +69,7 @@ public class GetRequest {
 			//Call to RestReponse class from RestAPIHelper.java class
 			RestResponse rs1=RestAPIHelper.performGetRequest("http://localhost:8087/laptop-bag/webapi/api/all",null);
 			System.out.println(rs1.toString());
-			
+
 
 			/*String getBody=body.handleResponse(response);
 

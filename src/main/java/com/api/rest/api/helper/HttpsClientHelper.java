@@ -73,7 +73,7 @@ public class HttpsClientHelper {
 
 	//========================================= This is for perform generic request =========================================//
 
-	private static RestResponse performRequest(HttpUriRequest method) {
+	private static RestResponse performRequestWithSSL(HttpUriRequest method) {
 
 		CloseableHttpResponse response=null;
 
@@ -106,45 +106,45 @@ public class HttpsClientHelper {
 
 		if (null!=headers) 
 			get.setHeaders(getCustomHeaders(headers));	
-		return performRequest(get);
+		return performRequestWithSSL(get);
 	}
 
 
 	//========================================= This is for Post generic request =========================================//	
 
-	public static RestResponse performPostRequest(String url, Object content, ContentType type,Map<String, String> headers) {
+	public static RestResponse performPostRequestWithSSL(String url, Object content, ContentType type,Map<String, String> headers) {
 		try {
-			return performPostRequest(new URI(url), content, type, headers);
+			return performPostRequestWithSSL(new URI(url), content, type, headers);
 		} catch (URISyntaxException e) {
 			throw new RuntimeException(e.getMessage(),e);
 		}
 	}
 
-	public static RestResponse performPostRequest(URI uri, Object content, ContentType type,Map<String, String> headers) {
+	public static RestResponse performPostRequestWithSSL(URI uri, Object content, ContentType type,Map<String, String> headers) {
 		HttpUriRequest post = RequestBuilder.post(uri).setEntity(geHttpEntity(content,type)).build();
 
 		if (null!=headers) 
 			post.setHeaders(getCustomHeaders(headers));	
-		return performRequest(post);
+		return performRequestWithSSL(post);
 	}
 
 
 	//========================================= This is for Put generic request =========================================//	
 
-	public static RestResponse performPutRequest(URI uri,Object content,ContentType type, Map<String, String> headers) {
+	public static RestResponse performPutRequestWithSSL(URI uri,Object content,ContentType type, Map<String, String> headers) {
 
 		HttpUriRequest put=RequestBuilder.put(uri).setEntity(geHttpEntity(content, type)).build();
 
 		if (null!=headers)
 			put.setHeaders(getCustomHeaders(headers));
 
-		return performRequest(put);
+		return performRequestWithSSL(put);
 	}
 
-	public static RestResponse performPutRequest(String url,Object content,ContentType type, Map<String, String> headers) {
+	public static RestResponse performPutRequestWithSSL(String url,Object content,ContentType type, Map<String, String> headers) {
 
 		try {
-			return performPutRequest(new URI(url),content,type,headers);
+			return performPutRequestWithSSL(new URI(url),content,type,headers);
 		} catch (URISyntaxException e) {
 			throw new RuntimeException(e.getMessage(),e);
 		}
@@ -153,22 +153,22 @@ public class HttpsClientHelper {
 
 	//========================================= This is for delete generic request =========================================//	
 
-	public static RestResponse performDeleteRequest(String url,Map<String, String> headers) {
+	public static RestResponse performDeleteRequestWithSSL(String url,Map<String, String> headers) {
 		try {
-			return performDeleteRequest(new URI(url), headers);
+			return performDeleteRequestWithSSL(new URI(url), headers);
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage(),e);
 		}
 	}
 
-	public static RestResponse performDeleteRequest(URI uri,Map<String, String> headers) {
+	public static RestResponse performDeleteRequestWithSSL(URI uri,Map<String, String> headers) {
 
 		HttpUriRequest delete=RequestBuilder.delete(uri).build();
 
 		if (null!=headers) {
 			delete.setHeaders(getCustomHeaders(headers));
 		}
-		return performRequest(delete);
+		return performRequestWithSSL(delete);
 
 	}
 }

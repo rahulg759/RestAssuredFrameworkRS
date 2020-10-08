@@ -1,4 +1,9 @@
-Remember - Always run on your run tomcat port. My tomcat port is 8087
+Important points -
+
+1-Remember - Always run on your run tomcat port. My tomcat port is 8087 or check port from server.xml file from tomcat/conf directory.
+2-We have 3 war files normal,prompt,ssl. So according to our requiremnet we need to depoloy war files in tomcat server.
+
+=============================================================###############============================================================
 
 Pckg -->>> src/main/java -->>> com.api.rest.api.helper -->>
 
@@ -56,11 +61,28 @@ Fiddler - Fiddler is a free debugging proxy for any browser. We can use it to co
 
 =============================================================###############============================================================
 
-SSL Certificate -- >>
+SSL Certificate -- >>(For more information go to Endpoint.xlxs)
 
 1-For enable the SSL certificate - > Go to your Windows menu and search %HOME_JAVA% and enter.
 You will be navigated to jdk folder and open bin.
 2-we need to open the command prompt as administrator mode.
 3- For handling SSL Certificate we need to use TrustStrategy interface.
 4-SSLContextBuilder class for customized the client.
+5- HttpsClientHelper.java class contains all framework level generic methods related to SSL.
+6-TestHelperRquestWithSSL.java class as junit class from where i triggered my test scripts.
+7-SSLRequest.java class is a main class which contains test methods (trigerred method) and calls methods of HttpsClientHelper.java class.
 
+=============================================================###############============================================================
+
+AsyncClient -
+
+1-First add the dependent jars - apache httpasyncclient 4.1.2
+2-Create class HttpAsyncClientHelper which contains with and without SSL methods.
+3-Added header and httpentity methods from RestAPIHelper.
+4-If in asynchronous mode,when we use HttpAsyncClient if we start or trigger that test cases directly we will get the below error-
+Request cannot be executed; I/O reactor status: INACTIVE
+
+so first we need to start the client before executing the HttpRequest.
+client.start();
+
+=============================================================###############============================================================

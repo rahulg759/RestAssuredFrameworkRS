@@ -23,7 +23,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicHeader;
 
 import com.api.rest.api.model.RestResponse;
-import com.ctc.wstx.shaded.msv_core.util.Uri;
+
 
 public class RestAPIHelper {
 
@@ -76,6 +76,8 @@ public class RestAPIHelper {
 		}
 	}
 
+	// =================================== Creating the generic method for get request ==================================================//
+	
 	public static RestResponse performGetRequest(URI uri, Map<String, String> headers) {
 		HttpGet get = new HttpGet(uri);
 
@@ -121,7 +123,7 @@ public class RestAPIHelper {
 	 * RuntimeException(e.getMessage(),e); } }
 	 */
 
-	// =================================== Creating the generic method for post request ==================================================//
+	// =================================== Creating the generic method for headers ==================================================//
 
 
 
@@ -143,9 +145,10 @@ public class RestAPIHelper {
 			throw new RuntimeException("Entity Type not found");
 	}
 
+	// =================================== Creating the generic method for post request ==================================================//
 
 	public static RestResponse performPostRequest(String url, Object content, ContentType type,Map<String, String> headers) {
-		CloseableHttpResponse response = null;
+	//	CloseableHttpResponse response = null;
 		HttpPost post = new HttpPost(url);
 
 		if (headers != null) {
